@@ -5,24 +5,24 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+> Nơi bạn có thể thoải mái chia sẻ những cảm nhận và đóng góp ý kiến cá nhân sau quá trình trải nghiệm chương trình First Cloud AI Journey. Những chia sẻ này sẽ giúp team FCAJ khắc phục các điểm còn hạn chế và hoàn thiện chất lượng chương trình dựa trên các khía cạnh dưới đây:
 
 ### Đánh giá chung
 
 **1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Không khí làm việc cực kỳ hòa đồng và cởi mở. Mọi người trong FCAJ luôn nhiệt tình giúp đỡ mỗi khi mình vướng mắc, ngay cả ngoài giờ hành chính. Nơi làm việc được sắp xếp ngăn nắp, thoải mái, tạo nguồn cảm hứng và sự tập trung cao độ. Dù vậy, nếu chương trình tổ chức thêm các hoạt động team bonding hay giao lưu nội bộ thì mọi người sẽ càng gắn kết hơn.
 
 **2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Mentor đồng hành hết sức tận tâm, chỉ bảo từng chi tiết và kiên nhẫn giải đáp triệt để những thắc mắc của mình, đồng thời luôn cổ vũ việc chủ động đặt câu hỏi. Ban admin thì xử lý các công tác thủ tục, chuẩn bị tài liệu rất chỉn chu, giúp quá trình thực tập diễn ra hanh thông. Điểm mình ấn tượng nhất là mentor luôn tạo khoảng không gian để mình tự tìm tòi, suy nghĩ giải pháp trước khi đưa ra định hướng.
 
 **3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+Nhiệm vụ được giao bám rất sát với nền tảng lý thuyết mình tích lũy trên nhà trường, đồng thời mở ra nhiều mảng kiến thức mới mẻ mà mình chưa từng có cơ hội cọ xát. Nhờ đó, mình không chỉ vững vàng hơn về chuyên môn cốt lõi mà còn tích lũy được nhiều kinh nghiệm thực tiễn quý giá.
 
 **4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Chuyến thực tập mang lại cho mình vô số kỹ năng thiết thực, từ việc thành thạo các công cụ quản lý công việc, nâng cao khả năng phối hợp nhóm đến tác phong giao tiếp chuẩn mực nơi công sở. Bên cạnh đó, những góc nhìn và bài học thực chiến từ mentor đã giúp mình làm rõ hơn định hướng phát triển bản thân trong tương lai.
 
 **5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Văn hóa doanh nghiệp mang tinh thần tích cực và chuyên nghiệp: đồng nghiệp luôn tôn trọng nhau, duy trì thái độ làm việc nghiêm túc nhưng không kém phần thoải mái. Trong các đợt cao điểm dự án, toàn đội ngũ đều đồng lòng hỗ trợ lẫn nhau bất kể cấp bậc. Sự hòa đồng này khiến mình cảm thấy thực sự gắn kết và là một mảnh ghép của tập thể, dù chỉ ở vị trí thực tập sinh.
 
 **6. Chính sách / phúc lợi cho thực tập sinh**  
 Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
