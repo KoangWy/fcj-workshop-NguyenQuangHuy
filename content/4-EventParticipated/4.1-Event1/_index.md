@@ -92,4 +92,4 @@ Attending the **AWS FC Community Day** was an exceptionally practical and valuab
 - **Balanced Technical & Business Insights**: The event covered a comprehensive spectrum from deep infrastructure (Private VPC, Multi-Agent) to enterprise business applications (HR Automation, Cost Optimization).
 
 #### Event Photos
-![Image of attending event online](./../../../static/images/4-EventParticipated/event1.png)
+![Image of attending event online](.//images/4-EventParticipated/event1.png)
