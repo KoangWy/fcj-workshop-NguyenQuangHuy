@@ -11,7 +11,7 @@ During my internship, I participated in 3 events. Each event was a memorable exp
 ### [Event 1](4.1-Event1/)
 &emsp;**Event Name:** AWS FC Community Day
 
-&emsp;**Date & Time:** 09:00, June 15, 2024
+&emsp;**Date & Time:** 09:00, July 4, 2026
 
 &emsp;**Location:** 26th & 36th Floors, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City (Online)
 
@@ -26,7 +26,7 @@ During my internship, I participated in 3 events. Each event was a memorable exp
 ### [Event 2](4.2-Event2/)
 &emsp;**Event Name:** AWS Study Tour & Cloud AI Journey
 
-&emsp;**Date & Time:** 09:00, July 20, 2024
+&emsp;**Date & Time:** 09:00, July 11, 2026
 
 &emsp;**Location:** 26th & 36th Floors, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
@@ -41,7 +41,7 @@ During my internship, I participated in 3 events. Each event was a memorable exp
 ### [Event 3](4.1-Event3/)
 &emsp;**Event Name:** Agentic AI Buildweek Hackathon
 
-&emsp;**Date & Time:** 08:00, August 10, 2024 (24-Hour Hackathon)
+&emsp;**Date & Time:** 09:00, July 25, 2026
 
 &emsp;**Location:** 26th & 36th Floors, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
