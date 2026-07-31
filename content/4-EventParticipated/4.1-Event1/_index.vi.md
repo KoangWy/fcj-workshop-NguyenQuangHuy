@@ -6,120 +6,89 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch "AWS FC Community Day"
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Chia sẻ kinh nghiệm thực tế, trải nghiệm và góc nhìn từ môi trường doanh nghiệp về Cloud & AI.
+- Cập nhật các công nghệ tiên phong: Agentic Platform, Voice AI tiếng Việt, AWS DevOps Agent, Amazon Q Business/Developer và Private Security cho MCP Server.
+- Kết nối cộng đồng kỹ sư, chuyên gia và định hướng con đường phát triển sự nghiệp (Career Path) cho sinh viên/kỹ sư trẻ.
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Steve Trần** - Founder @ Cloud Thinker (Cựu Solution Architect @ AWS)
+- **Hiếu Nghị** - Cloud Engineer @ Renova Cloud
+- **Anh Kiệt** - AWS Study Builder / Student AWS Cloud Club
+- **Anh Trung** - Founder & CEO @ R AI (Cựu YC Founder)
+- **Chị Bảo** - Cloud Engineer @ Cloud Kinetics
+- **Anh Nguyên Nguyễn** - Cloud Engineer @ Cloud Kinetics
+- **Anh Trường ** - AI Solution Architect @ Noventic
+- **Chị Minh Anh** - Solution Specialist @ Noventic
+- **Toàn Nguyễn** - AWS Security Builder
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### Session 1: Cloud Architecture & Agentic Platform cho Infrastructure (Steve Trần - Cloud Thinker)
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- **Hành trình sự nghiệp (Career Path)**: Chia sẻ định hướng phát triển từ Developer/DevOps lên Solution Architect tại AWS và Founder startup công nghệ.
+- **Giải quyết Complexity & Tech Debt**: Ứng dụng AI Agent hỗ trợ kỹ sư vận hành hạ tầng Production critical (Incident investigation, IaC code review, FinOps/Cost Optimization, Security/Pen testing).
+- **Kiến trúc Single-Agent vs Multi-Agent**: Phân tích lý do chọn Multi-Agent (Specialist agents) để tối ưu chi phí LLM, giảm tải Context Window và hỗ trợ Role-Based Access Control (RBAC).
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### Session 2: Voice AI Agent cho Tiếng Việt & Demo AWS Bedrock (Hiếu Nghị, Anh Kiệt, Anh Trung)
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+- **So sánh kiến trúc Voice AI**: Phân tích trade-offs giữa Speech-to-Speech và mô hình 3 bước **STT → LLM (Tool Calling) → TTS** (phù hợp với Tiếng Việt - low resource language, đảm bảo guardrails và kiểm soát output real-time).
+- **Thách thức vận hành thực tế**: Phân biệt giới tính (xưng hô anh/chị), cơ chế ngắt lời thông minh (VAD/Context awareness), xử lý giọng vùng miền (accent) và Handoff to Human Agent mượt mà.
+- **Live Demo**: Voice Agent tra cứu thông tin sản phẩm Apple/MacBook sử dụng AWS Bedrock Agent Core kết hợp Knowledge Base.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Session 3: AWS DevOps AI Agent cho Incident Management (Chị Bảo, Nguyên Nguyễn - Cloud Kinetics)
 
-#### Domain-Driven Design (DDD)
+- **Khắc phục Fragmented Telemetry**: Tự động hóa quy trình Root Cause Analysis (RCA), giúp giảm đáng kể thời gian MTTD và MTTR cho hệ thống Microservices cỡ lớn.
+- **6 Trụ cột cốt lõi**: Context Learning (Topology mapping), Control (Least Privilege), Integration (MCP), Collaboration (Slack/Jira), Convenience, Cost-Effective.
+- **Quy trình xử lý 4 bước**: Trigger & Classification → Investigation (RCA) → Mitigation Plan (Human Approval) → Long-term Improvement.
+- **Live Demo**: Giả lập tấn công DDoS vào hệ thống E-commerce chạy ECS/ALB, DevOps Agent khoanh vùng nguyên nhân và đưa ra lệnh khắc phục trực tiếp.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Session 4: Amazon Q - Ứng Dụng AI Automation Trong Doanh Nghiệp & HR (Anh Trường, Chị Minh Anh - Noventic)
 
-#### Event-Driven Architecture
+- **Giải quyết bài toán HR**: Tự động hóa lọc CV (Screening), loại bỏ đánh giá cảm tính, bảo mật dữ liệu doanh nghiệp so với các AI public.
+- **Khả năng kết nối dữ liệu**: Đọc dữ liệu đa dạng (SharePoint, Google Drive, S3, Jira, Database...) thông qua MCP Connectors và quản trị bảo mật chuẩn AWS.
+- **Skill Customization**: Xây dựng skill tự động hóa tuyển dụng — phân tích CV theo JD, chấm điểm match %, dự toán mức lương, lập lịch phỏng vấn qua Outlook và xuất Dashboard báo cáo HTML.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+#### Session 5: Private Security Architecture Cho Amazon Q & MCP Server (Toàn Nguyễn, Hiếu Nghị)
 
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+- **Nguy cơ bảo mật Public Endpoints**: Rủi ro tấn công DDoS, Man-in-the-Middle (MitM) và rò rỉ dữ liệu khi kết nối MCP Server qua Public Internet.
+- **Kiến trúc Private Security**: Đặt MCP Server trong Private Subnet, giao tiếp an toàn qua VPC Interface Endpoints, AWS Cognito Authentication, Application Load Balancer (TLS/SSL) và Route 53 Private Resolver.
+- **Live Demo & Cost Estimation**: Truy vấn thông tin hệ thống real-time qua Private MCP Server và đánh giá chi phí vận hành hạ tầng bảo mật.
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
+#### Tư Duy Kiến Trúc & Vận Hành
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Human-in-the-loop**: AI Agents đóng vai trò trợ lực (Productivity Multiplier) chứ không thay thế hoàn toàn con người trong các hệ thống Production critical.
+- **Tối ưu hóa tài nguyên**: Lựa chọn mô hình Multi-Agent chuyên biệt để tối ưu hóa token, giảm bớt loãng context và phân quyền chính xác.
 
-#### Kiến Trúc Kỹ Thuật
+#### Kỹ Thuật Voice AI & LLM Integration
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- Hiểu rõ cơ chế xây dựng Voice AI cho ngôn ngữ ít tài nguyên như Tiếng Việt thông qua pipeline STT-LLM-TTS.
+- Tầm quan trọng của Tool Calling, Guardrails và xử lý ngắt lời dựa trên ngữ cảnh thực tế.
 
-#### Chiến Lược Hiện Đại Hóa
+#### Bảo Mật & Tự Động Hóa Enterprise
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- Áp dụng chuẩn bảo mật Zero Trust cho MCP Server bằng VPC Endpoints và Private DNS.
+- Tự động hóa các quy trình nghiệp vụ (DevOps, HR, FinOps) bằng việc kết nối dữ liệu nội bộ an toàn.
 
 ### Ứng Dụng Vào Công Việc
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- **Triển khai thử nghiệm AWS DevOps Agent**: Lập kịch bản phân tích log/trace tự động cho các sự cố hệ thống trong lab/project.
+- **Xây dựng Custom Skills với Amazon Q**: Thử nghiệm viết các file skill instruction (.md) để tự động hóa việc lọc tài liệu, phân tích yêu cầu hoặc xuất báo cáo.
+- **Áp dụng kiến trúc Private VPC cho MCP**: Đảm bảo các tích hợp giữa AI Agent và hệ thống nội bộ tuân thủ phân quyền IAM Least Privilege và kết nối private.
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Tham gia sự kiện **AWS FC Community Day** là một trải nghiệm rất bổ ích và giàu tính thực tiễn:
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- **Học hỏi từ các chuyên gia thực chiến**: Diễn giả từ các đơn vị lớn (Cloud Thinker, Renova Cloud, R AI, Cloud Kinetics, Noventic) mang đến những góc nhìn thực tế về bài toán vận hành và kinh doanh.
+- **Live Demo ấn tượng**: Trực tiếp theo dõi các demo về Voice Agent tiếng Việt, DevOps Agent xử lý tấn công DDoS và Amazon Q lọc CV tự động giúp hình dung rõ ràng về khả năng ứng dụng thực tế.
+- **Cân bằng giữa Kỹ thuật & Nghiệp vụ**: Sự kiện mang lại cái nhìn toàn diện từ hạ tầng sâu (Private VPC, Multi-Agent) đến ứng dụng nghiệp vụ doanh nghiệp (HR Automation, Cost Optimization).
 
 #### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+![Hình ảnh tham gia online](./../../../static/images/4-EventParticipated/event1.png)

@@ -6,121 +6,90 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: "AWS FC Community Day"
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Share real-world experience, practical insights, and business perspectives on Cloud & AI.
+- Update on pioneering technologies: Agentic Platform, Vietnamese Voice AI, AWS DevOps Agent, Amazon Q Business/Developer, and Private Security for MCP Server.
+- Connect the community of engineers and experts, providing career path guidance for students and young engineers.
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Steve Trần** - Founder @ Cloud Thinker (Former Solution Architect @ AWS)
+- **Hiếu Nghị** - Cloud Engineer @ Renova Cloud
+- **Anh Kiệt** - AWS Study Builder / Student AWS Cloud Club
+- **Anh Trung** - Founder & CEO @ R AI (Former YC Founder)
+- **Chị Bảo** - Cloud Engineer @ Cloud Kinetics
+- **Anh Nguyên Nguyễn** - Cloud Engineer @ Cloud Kinetics
+- **Anh Trường ** - AI Solution Architect @ Noventic
+- **Chị Minh Anh** - Solution Specialist @ Noventic
+- **Toàn Nguyễn** - AWS Security Builder
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### Session 1: Cloud Architecture & Agentic Platform for Infrastructure (Steve Trần - Cloud Thinker)
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- **Career Path**: Sharing career development trajectory from Developer/DevOps to Solution Architect at AWS and tech startup Founder.
+- **Solving Complexity & Tech Debt**: Applying AI Agents to support engineers in operating production-critical infrastructure (Incident investigation, IaC code review, FinOps/Cost Optimization, Security/Pen testing).
+- **Single-Agent vs. Multi-Agent Architecture**: Analyzing the rationale behind choosing Multi-Agent (Specialist agents) to optimize LLM costs, reduce Context Window overhead, and support Role-Based Access Control (RBAC).
 
-#### Transitioning to modern application architecture – Microservices
+#### Session 2: Vietnamese Voice AI Agent & AWS Bedrock Demo (Hiếu Nghị, Anh Kiệt, Anh Trung)
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- **Voice AI Architecture Comparison**: Analyzing trade-offs between Speech-to-Speech and the 3-step pipeline **STT → LLM (Tool Calling) → TTS** (suited for Vietnamese — a low-resource language, ensuring guardrails and real-time output control).
+- **Real-world Operational Challenges**: Gender detection (appropriate honorifics), smart voice activity interruption (VAD/Context awareness), regional accent handling, and seamless Handoff to Human Agents.
+- **Live Demo**: Voice Agent querying Apple/MacBook product information using AWS Bedrock Agent Core integrated with Knowledge Base.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Session 3: AWS DevOps AI Agent for Incident Management (Chị Bảo, Nguyên Nguyễn - Cloud Kinetics)
 
-#### Domain-Driven Design (DDD)
+- **Overcoming Fragmented Telemetry**: Automating the Root Cause Analysis (RCA) workflow, significantly reducing MTTD and MTTR for large Microservices systems.
+- **6 Core Pillars**: Context Learning (Topology mapping), Control (Least Privilege), Integration (MCP), Collaboration (Slack/Jira), Convenience, Cost-Effective.
+- **4-Step Incident Workflow**: Trigger & Classification → Investigation (RCA) → Mitigation Plan (Human Approval) → Long-term Improvement.
+- **Live Demo**: Simulating a DDoS attack on an E-commerce system running on ECS/ALB, where DevOps Agent isolates the root cause and provides direct mitigation commands.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### Session 4: Amazon Q - AI Automation for Enterprise & HR (Anh Trường, Chị Minh Anh - Noventic)
 
-#### Event-Driven Architecture
+- **Addressing HR Challenges**: Automating CV screening, eliminating biased evaluations, and ensuring enterprise data security compared to public AI models.
+- **Data Connectivity**: Ingesting diverse data sources (SharePoint, Google Drive, S3, Jira, Databases...) via MCP Connectors with AWS-grade security & governance.
+- **Skill Customization**: Building custom recruitment skills — analyzing CVs against JDs, calculating match percentages, estimating salary benchmarks, scheduling Outlook interviews, and generating HTML dashboard reports.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+#### Session 5: Private Security Architecture for Amazon Q & MCP Server (Toàn Nguyễn, Hiếu Nghị)
 
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **Public Endpoint Security Risks**: Risks of DDoS attacks, Man-in-the-Middle (MitM) exploits, and data leakage when connecting MCP Servers over the Public Internet.
+- **Private Security Architecture**: Deploying MCP Servers in Private Subnets, communicating securely via VPC Interface Endpoints, AWS Cognito Authentication, Application Load Balancers (TLS/SSL), and Route 53 Private Resolver.
+- **Live Demo & Cost Estimation**: Querying real-time system metrics via Private MCP Server and assessing the infrastructure cost of security implementation.
 
 ### Key Takeaways
 
-#### Design Mindset
+#### Architecture & Operations Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Human-in-the-loop**: AI Agents act as productivity multipliers rather than replacing humans entirely in production-critical systems.
+- **Resource Optimization**: Leveraging specialized Multi-Agent models to optimize token consumption, minimize context dilution, and enforce precise access control.
 
-#### Technical Architecture
+#### Voice AI & LLM Integration Techniques
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- Understanding the mechanics of building Voice AI for low-resource languages like Vietnamese using an STT-LLM-TTS pipeline.
+- Recognizing the critical role of Tool Calling, Guardrails, and context-aware interruption handling in real-time dialog systems.
 
-#### Modernization Strategy
+#### Enterprise Security & Automation
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- Applying Zero Trust security standards to MCP Servers using VPC Endpoints and Private DNS.
+- Automating business workflows (DevOps, HR, FinOps) by securely connecting to internal enterprise data.
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Pilot AWS DevOps Agent**: Establish automated log/trace analysis workflows for incident response in lab/project environments.
+- **Build Custom Skills with Amazon Q**: Experiment with writing skill instruction files (.md) to automate document screening, requirements analysis, or report generation.
+- **Implement Private VPC Architecture for MCP**: Ensure AI Agent integrations with internal systems comply with IAM Least Privilege and private networking principles.
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Attending the **AWS FC Community Day** was an exceptionally practical and valuable experience:
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+- **Learning from Field Experts**: Speakers from leading organizations (Cloud Thinker, Renova Cloud, R AI, Cloud Kinetics, Noventic) delivered realistic insights on operations and business challenges.
+- **Impressionable Live Demos**: Watching live demos of Vietnamese Voice Agents, DDoS incident handling with DevOps Agent, and automated CV screening with Amazon Q provided clear visualization of real-world applicability.
+- **Balanced Technical & Business Insights**: The event covered a comprehensive spectrum from deep infrastructure (Private VPC, Multi-Agent) to enterprise business applications (HR Automation, Cost Optimization).
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+#### Event Photos
+![Image of attending event online](./../../../static/images/4-EventParticipated/event1.png)
