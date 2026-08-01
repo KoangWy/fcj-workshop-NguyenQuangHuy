@@ -32,27 +32,6 @@ Bài thực hành triển khai luồng phát hiện và ứng phó sự cố nat
 
 #### Sơ đồ Kiến trúc Hệ thống Tổng quan
 
-```mermaid
-graph TD
-    subgraph Track1["Luồng AWS Cloud Native Detect-Decide-Act"]
-        A2["Tấn công AWS Cloud (CLI/SDK)"] --> C1["Log Audit AWS CloudTrail"]
-        C1 --> C3["Mẫu Sự kiện EventBridge (<5s)"]
-        GD["Cảnh báo AWS GuardDuty ML"] --> C3
-        SH["AWS Security Hub (CIS Benchmark)"] --> C3
-        C3 --> SF["Bộ Phối hợp Step Functions"]
-        SF --> L1["AWS Lambda Xử lý Remediate"]
-        L1 --> SNS["Amazon SNS / Email Alert"]
-        L1 --> DDB["Bảng Kiểm toán DynamoDB"]
-        L1 --> ACT["Tự động Phản ứng (Revert S3 / Contain IAM SecurityDenyAll)"]
-        C1 --> S3["Bucket Log Trung tâm S3"] --> ATH["Amazon Athena (Truy tìm SQL)"]
-    end
-
-    subgraph ComparisonTrack["Động cơ Ingestion Luồng kép & So sánh Benchmark"]
-        S3 --> SQS["Amazon SQS Queue"] --> EF["Elastic Agent / Fleet"] --> KIB["Elastic SIEM Core"]
-        KIB -.-> BENCH["Ma trận So sánh Phát hiện (detection-comparison.md)"]
-    end
-```
-
 ---
 
 #### Nội dung bài Workshop
