@@ -91,4 +91,4 @@ Tham gia sự kiện **AWS FC Community Day** là một trải nghiệm rất b�
 - **Cân bằng giữa Kỹ thuật & Nghiệp vụ**: Sự kiện mang lại cái nhìn toàn diện từ hạ tầng sâu (Private VPC, Multi-Agent) đến ứng dụng nghiệp vụ doanh nghiệp (HR Automation, Cost Optimization).
 
 #### Một số hình ảnh khi tham gia sự kiện
-![Hình ảnh tham gia online](.//images/4-EventParticipated/event1.png)
+![Hình ảnh tham gia online](/images/4-EventParticipated/event1.png)
