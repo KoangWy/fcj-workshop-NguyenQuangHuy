@@ -1,52 +1,32 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-20
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-### Week 6 Objectives:
+### Week 6 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand IAM Access Analyzer passive scanning, Amazon Athena serverless SQL log queries, and AWS GuardDuty managed threat detection.
+* Enable IAM Access Analyzer to detect external cross-account access and public resource shares.
+* Build a library of 4 core SOC forensic SQL queries in Amazon Athena to hunt for threats directly over CloudTrail logs stored in S3.
+* Enable AWS GuardDuty detector under the 30-day free trial period and evaluate managed findings against custom-engineered KQL detection rules.
+* Author a comparative evaluation report (`guardduty-comparison.md`) assessing detection latency, visibility coverage, and cost posture, then safely disable GuardDuty before trial expiry.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Carried Out This Week
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| Mon | - Enable IAM Access Analyzer with the AWS account as the trust zone boundary to audit public/cross-account access.<br>- Configure Amazon Athena database & workgroup over CloudTrail S3 log bucket. | 07/20/2026 | 07/20/2026 | <https://000030.awsstudygroup.com> |
+| Tue | - Author and execute 4 SOC forensic SQL queries in Athena Query Editor:<br>&emsp;+ Failed API calls by IP<br>&emsp;+ Access key creation timelines<br>&emsp;+ S3 bucket policy changes<br>&emsp;+ Root user API actions in last 7 days. | 07/21/2026 | 07/21/2026 | <https://000106.awsstudygroup.com> |
+| Wed | - Enable AWS GuardDuty detector in trial mode with strict calendar reminder for disablement.<br>- Create EventBridge Event Rule filtering GuardDuty findings (`aws.guardduty`) and forwarding JSON payloads to Lambda. | 07/22/2026 | 07/22/2026 | <https://000098.awsstudygroup.com> |
+| Thu | - Re-execute AWS Cloud Attack Scenarios 8–12 (Root login without MFA, IAM recon, IAM persistence key, S3 exfiltration).<br>- Collect empirical comparison data: Custom KQL latency (~4–13 min) vs. GuardDuty baseline dependencies and detection timing. | 07/23/2026 | 07/23/2026 | Empirical Testing Data |
+| Fri | - Author comparative evaluation report (`guardduty-comparison.md`).<br>- Safely disable GuardDuty detector and S3 Protection prior to trial expiration to maintain $0 AWS spend. | 07/24/2026 | 07/24/2026 | <https://000098.awsstudygroup.com> |
 
-### Week 6 Achievements:
+### Week 6 Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully enabled AWS IAM Access Analyzer for passive misconfiguration detection at zero cost.
+* Built a practical library of 4 forensic SQL queries in Amazon Athena enabling rapid threat hunting over S3 CloudTrail logs.
+* Integrated AWS GuardDuty managed threat detection into the serverless alert pipeline via EventBridge.
+* Conducted a head-to-head empirical evaluation of custom KQL detection rules vs. GuardDuty managed findings and authored `guardduty-comparison.md`.
+* Exercised strict financial discipline by disabling GuardDuty before trial expiration, preserving $0 total AWS spend.

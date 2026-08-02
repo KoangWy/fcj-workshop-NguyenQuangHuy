@@ -1,52 +1,32 @@
 ---
 title: "Week 5 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-13
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-### Week 5 Objectives:
+### Week 5 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand AWS Event-Driven Architecture principles: event producers, event buses, event rules, and targets.
+* Master Amazon EventBridge rule creation using custom JSON event patterns matching CloudTrail security events.
+* Learn AWS Lambda serverless execution models, execution roles, and Python Boto3 SDK integration.
+* Learn Amazon SNS messaging (email alerts) and Amazon DynamoDB NoSQL key-value datastore (table `SecurityAlerts` with TTL retention).
+* Architect and validate a complete real-time serverless security pipeline: EventBridge → Lambda → SNS + DynamoDB datastore.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Carried Out This Week
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| Mon | - Study AWS EventBridge architecture, custom event buses, and JSON event pattern syntax.<br>- Create Amazon SNS Topic (`soc-security-alerts-topic`) and subscribe email/webhook endpoints. | 07/13/2026 | 07/13/2026 | <https://000077.awsstudygroup.com> |
+| Tue | - Write EventBridge Event Rules filtering critical CloudTrail API events (`RootNoMFA`, IAM policy changes, unauthorized operations).<br>- Provision Amazon DynamoDB table (`SecurityAlerts`) with `AlertID` partition key and 90-day TTL retention. | 07/14/2026 | 07/14/2026 | <https://000060.awsstudygroup.com> |
+| Wed | - Develop Python AWS Lambda function (`soc-alert-enricher`) with IAM execution role.<br>- Implement Boto3 logic to enrich CloudTrail events and push real-time alerts to SNS Topic. | 07/15/2026 | 07/15/2026 | <https://000022.awsstudygroup.com> |
+| Thu | - Extend Lambda function to persist enriched security alert records into DynamoDB (`dynamodb.put_item()`).<br>- Configure CloudWatch Alarms (`SQSQueueDepthAlarm`, `LambdaErrorAlarm`, `FreeTierBudgetAlarm`). | 07/16/2026 | 07/16/2026 | <https://000008.awsstudygroup.com> |
+| Fri | - Wire EventBridge rules to target Lambda function.<br>- Execute Cloud attack simulations to verify dual alerting path: instant SNS email delivery (~2s) and persistent audit logging in DynamoDB. | 07/17/2026 | 07/17/2026 | Serverless Pipeline Testing |
 
-### Week 5 Achievements:
+### Week 5 Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Mastered event-driven architecture pattern using Amazon EventBridge, AWS Lambda, and Amazon SNS.
+* Engineered a Python Lambda function that enriches CloudTrail audit events in real time and publishes push notifications.
+* Built a persistent security alert datastore recording enriched threat telemetry directly into Amazon DynamoDB.
+* Configured CloudWatch Alarms ensuring operational health monitoring for Lambda execution and queue depths.
+* Validated sub-5-second serverless notification delivery while keeping all resources 100% within AWS Free Tier limits.

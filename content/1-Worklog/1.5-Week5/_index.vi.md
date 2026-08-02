@@ -1,54 +1,32 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+date: 2026-07-13
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-### Mục tiêu tuần 5:
+### Mục tiêu Tuần 5
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu các nguyên lý kiến trúc hướng sự kiện trên AWS (Event-Driven Architecture): Event producer, event bus, event rule và target.
+* Nắm vững cách tạo luật Amazon EventBridge bằng cú pháp JSON event pattern lọc sự kiện an ninh CloudTrail.
+* Tìm hiểu mô hình thực thi serverless AWS Lambda, IAM execution role và tích hợp thư viện Python Boto3 SDK.
+* Tìm hiểu dịch vụ nhắn tin Amazon SNS (cảnh báo email) và cơ sở dữ liệu NoSQL Amazon DynamoDB (bảng `SecurityAlerts` kèm cơ chế lưu trữ TTL).
+* Xây dựng và kiểm chứng đường ống cảnh báo an ninh serverless thời gian thực: EventBridge → Lambda → SNS + kho lưu trữ DynamoDB.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc triển khai trong tuần
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Nghiên cứu kiến trúc AWS EventBridge, custom event bus và cú pháp JSON event pattern.<br>- Tạo Amazon SNS Topic (`soc-security-alerts-topic`) và đăng ký endpoint nhận tin qua email/webhook. | 13/07/2026 | 13/07/2026 | <https://000077.awsstudygroup.com> |
+| 3 | - Viết các EventBridge Event Rule lọc các sự kiện CloudTrail quan trọng (`RootNoMFA`, chỉnh sửa IAM policy, truy cập trái phép).<br>- Khởi tạo bảng Amazon DynamoDB (`SecurityAlerts`) với Partition Key `AlertID` và cấu hình TTL 90 ngày. | 14/07/2026 | 14/07/2026 | <https://000060.awsstudygroup.com> |
+| 4 | - Lập trình hàm Python AWS Lambda (`soc-alert-enricher`) kèm IAM execution role.<br>- Triển khai logic Boto3 làm giàu dữ liệu sự kiện CloudTrail và gửi cảnh báo thời gian thực tới SNS Topic. | 15/07/2026 | 15/07/2026 | <https://000022.awsstudygroup.com> |
+| 5 | - Nâng cấp hàm Lambda ghi bản ghi cảnh báo đã xử lý vào bảng DynamoDB (`dynamodb.put_item()`).<br>- Cấu hình các CloudWatch Alarm (`SQSQueueDepthAlarm`, `LambdaErrorAlarm`, `FreeTierBudgetAlarm`). | 16/07/2026 | 16/07/2026 | <https://000008.awsstudygroup.com> |
+| 6 | - Gán EventBridge rule tới target hàm Lambda.<br>- Thực thi kịch bản tấn công Cloud kiểm thử luồng cảnh báo kép: gửi email SNS tức thì (~2s) và lưu trữ log audit lâu dài trên DynamoDB. | 17/07/2026 | 17/07/2026 | Serverless Pipeline Testing |
 
-### Kết quả đạt được tuần 5:
+### Kết quả đạt được Tuần 5
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thành thạo mô hình kiến trúc hướng sự kiện với Amazon EventBridge, AWS Lambda và Amazon SNS.
+* Lập trình hàm Python Lambda phân tích, bổ sung ngữ cảnh cho log CloudTrail JSON và gửi thông báo tức thì.
+* Xây dựng kho lưu trữ cảnh báo an ninh bền vững ghi nhận toàn bộ telemetry đe dọa trực tiếp vào DynamoDB.
+* Cấu hình hệ thống CloudWatch Alarms đảm bảo giám sát sức khỏe vận hành của hàm Lambda và độ sâu hàng đợi SQS.
+* Đảm bảo luồng cảnh báo serverless hoạt động gần như tức thì (<5s) và tuân thủ 100% hạn mức AWS Free Tier.

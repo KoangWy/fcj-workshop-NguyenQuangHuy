@@ -1,54 +1,32 @@
 ---
 title: "Worklog Tuần 2"
-date: 2024-01-01
-weight: 1
+date: 2026-06-22
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-### Mục tiêu tuần 2:
+### Mục tiêu Tuần 2
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu các khái niệm mạng AWS VPC: VPC CIDR block, public/private subnets, Internet Gateway, bảng định tuyến (Route Table), Security Group và Network ACL.
+* Xây dựng môi trường phòng thí nghiệm phát hiện đe dọa trên máy trạm Windows / FLARE-VM.
+* Cài đặt Elastic Agent, Sysmon (với cấu hình SwiftOnSecurity) và Suricata IDS để thu thập đa tầng telemetry máy trạm và mạng.
+* Thực thi 7 kịch bản mô phỏng tấn công Endpoint sử dụng Atomic Red Team (PowerShell fileless, LSASS dumping, Run key persistence, Scheduled task, DLL injection, Network scan, C2 beaconing).
+* Phát triển các quy tắc phát hiện KQL tùy chỉnh, lập trình công cụ SOAR Python (`elk_discord_alerter.py`) gửi cảnh báo về Discord và hoàn thiện 4 báo cáo săn đe dọa (Threat Hunt Reports).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc triển khai trong tuần
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Tìm hiểu mạng AWS VPC: public/private subnet, bảng định tuyến, Internet Gateway, Security Group vs Network ACL.<br>- Thiết kế quy tắc phân vùng mạng và thiết lập cơ chế cách ly an toàn cho môi trường lab mô phỏng tấn công. | 22/06/2026 | 22/06/2026 | <https://000003.awsstudygroup.com><br><https://000092.awsstudygroup.com> |
+| 3 | - Khởi tạo máy trạm thử nghiệm Windows 10 / FLARE-VM trên môi trường lab.<br>- Cài đặt Sysmon với cấu hình SwiftOnSecurity (`sysmonconfig.xml`) để thu thập Event ID 1 (Process Creation), Event ID 10 (Process Access), Event ID 13 (Registry Modification).<br>- Cài đặt Elastic Agent kết nối về Elastic SIEM Fleet và cấu hình Suricata IDS bắt gói tin mạng. | 23/06/2026 | 23/06/2026 | <https://000048.awsstudygroup.com><br><https://000062.awsstudygroup.com> |
+| 4 | - Cài đặt Atomic Red Team framework trên máy trạm Windows.<br>- Thực thi 4 kịch bản tấn công Endpoint đầu tiên:<br>&emsp;+ Kịch bản 1 (T1059.001): PowerShell Fileless Execution (Base64 encoded command).<br>&emsp;+ Kịch bản 2 (T1003.001): LSASS Memory Dump qua `rundll32.exe` & `comsvcs.dll` (LOLBin abuse).<br>&emsp;+ Kịch bản 3 (T1547.001): Registry Run Key Persistence.<br>&emsp;+ Kịch bản 4 (T1053.005): Scheduled Task Persistence qua `schtasks.exe`. | 24/06/2026 | 24/06/2026 | Atomic Red Team Docs<br><https://000044.awsstudygroup.com> |
+| 5 | - Thực thi 3 kịch bản tấn công Endpoint tiếp theo:<br>&emsp;+ Kịch bản 5 (T1055.001): DLL Injection qua `mavinject.exe`.<br>&emsp;+ Kịch bản 6 (T1046): Network Service Discovery & Port Scanning qua Nmap/Suricata.<br>&emsp;+ Kịch bản 7 (T1071.001): C2 Beaconing với malicious HTTP User Agent.<br>- Lập trình công cụ SOAR Python (`elk_discord_alerter.py`) truy vấn Elastic Security API và tự động đẩy cảnh báo sự cố kèm MITRE ID về kênh Discord qua webhook. | 25/06/2026 | 25/06/2026 | <https://000066.awsstudygroup.com><br>Elastic Security API Docs |
+| 6 | - Xây dựng, kiểm thử và tối ưu 7 quy tắc phát hiện KQL/EQL tương ứng trên Elastic SIEM.<br>- Tiến hành 4 chiến dịch Threat Hunting chủ động trên dữ liệu log lịch sử:<br>&emsp;+ Hunt 1: LOLBin Abuse (`rundll32`, `mavinject`).<br>&emsp;+ Hunt 2: LSASS Reconnaissance (tinh chỉnh exclusion cho `svchost.exe` / `0x1410`).<br>&emsp;+ Hunt 3: Persistence Audit (vòng đời tạo và xóa Run key / Scheduled task).<br>&emsp;+ Hunt 4: C2 Beaconing (bổ sung luật Sysmon script egress).<br>- Hoàn thiện 4 báo cáo Threat Hunt (`hunt1` - `hunt4`). | 26/06/2026 | 26/06/2026 | Elastic SIEM Detection Engine<br>MITRE ATT&CK Framework |
 
-### Kết quả đạt được tuần 2:
+### Kết quả đạt được Tuần 2
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nắm vững kiến thức mạng AWS VPC, mô hình chia subnet, bảng định tuyến và cơ chế kiểm soát truy cập tường lửa Security Group / NACL.
+* Xây dựng thành công môi trường máy trạm thử nghiệm với đầy đủ Elastic Agent, Sysmon và Suricata IDS thu thập đa tầng telemetry.
+* Mô phỏng thành công 7 kịch bản tấn công Endpoint theo chuẩn MITRE ATT&CK bằng Atomic Red Team.
+* Kỹ thuật hóa bộ quy tắc phát hiện KQL/EQL trên Elastic SIEM và triển khai công cụ SOAR Python gửi cảnh báo tức thì qua Discord webhook.
+* Thực hiện 4 chiến dịch Threat Hunting chủ động trên dữ liệu log lịch sử, phát hiện khoảng trống giám sát và tinh chỉnh luật phát hiện.

@@ -1,54 +1,32 @@
 ---
 title: "Worklog Tuần 8"
-date: 2024-01-01
-weight: 1
+date: 2026-08-03
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-### Mục tiêu tuần 8:
+### Mục tiêu Tuần 8
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thiết kế và phát triển dịch vụ Backend REST API (`backend/`) bằng Python FastAPI/Pydantic kết hợp AWS Boto3 SDK cho DynamoDB, CloudWatch và AWS Cost Explorer.
+* Triển khai cơ chế In-Memory TTL Cache (bảo vệ hạn mức AWS Free-Tier và tối ưu độ trễ API sub-100ms).
+* Triển khai giao diện điều khiển Frontend (`frontend/`) bằng React 18, TypeScript, Vite và thiết kế giao diện Dark Mode hiện đại.
+* Xây dựng các widget vận hành: Trạng thái luồng dữ liệu thời gian thực, bảng giám sát chi phí Free Tier, biểu đồ độ trễ serverless (Recharts) và bảng dữ liệu cảnh báo an ninh trực tiếp.
+* Tích hợp các component React Frontend với REST API Backend qua cơ chế tự động lấy dữ liệu định kỳ (30 giây/lần).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc triển khai trong tuần
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Thiết kế kiến trúc RESTful API cho Bảng điều khiển vận hành Automation Ops Dashboard.<br>- Khởi tạo thư mục dự án Backend Python (`backend/`) và xây dựng các module dịch vụ Boto3 (`dynamodb_service.py`, `cloudwatch_service.py`, `cost_service.py`). | 03/08/2026 | 03/08/2026 | <https://000066.awsstudygroup.com> |
+| 3 | - Triển khai các API Endpoint (`GET /api/alerts`, `GET /api/metrics/pipeline`, `GET /api/metrics/cost`, `GET /api/health`).<br>- Cấu hình middleware CORS, trình xử lý lỗi Pydantic và cơ chế In-Memory TTL Cache phản hồi API tốc độ cao (<100ms). | 04/08/2026 | 04/08/2026 | Python API Testing |
+| 4 | - Khởi tạo dự án ứng dụng React sử dụng Vite (`npx create-vite@latest frontend --template react-ts`).<br>- Thiết lập hệ thống CSS design system, typography, màu sắc Dark Mode và bố cục linh hoạt Flex/Grid. | 05/08/2026 | 05/08/2026 | <https://000079.awsstudygroup.com> |
+| 5 | - Phát triển các UI component chính: `PipelineStatusWidget`, `CostTrackerWidget`, `LatencyChart` (biểu đồ đường), `InvocationChart` (biểu đồ cột), và `AlertFeedTable` (bảng dữ liệu hiển thị badge mức độ nghiêm trọng). | 06/08/2026 | 06/08/2026 | React Component Architecture |
+| 6 | - Tích hợp React Frontend với các REST API Endpoint Backend (`http://localhost:8000/api`).<br>- Thêm cơ chế tự động làm mới dữ liệu sau mỗi 30 giây và kiểm thử đóng gói ứng dụng web (`npm run build`). | 07/08/2026 | 07/08/2026 | Web App Testing & Build |
 
-### Kết quả đạt được tuần 8:
+### Kết quả đạt được Tuần 8
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thiết kế và phát triển dịch vụ Backend REST API Python FastAPI hiệu năng cao trong thư mục `backend/`.
+* Tích hợp thư viện AWS Boto3 SDK giúp truy vấn trực tiếp các chỉ số thời gian thực từ DynamoDB, CloudWatch và AWS Billing API kèm In-Memory TTL Cache bảo vệ Free-Tier.
+* Xây dựng giao diện web ứng dụng hiện đại chuẩn Dark Theme bằng React, TypeScript và Vite trong thư mục `frontend/`.
+* Kết nối mượt mà React Frontend với Python Backend API kèm biểu đồ telemetry trực quan và cơ chế làm mới dữ liệu mỗi 30 giây.
+* Kiểm chứng thiết kế đáp ứng (responsive layout) và thời gian phản hồi API sub-100ms trên cả giao diện máy tính và di động.
