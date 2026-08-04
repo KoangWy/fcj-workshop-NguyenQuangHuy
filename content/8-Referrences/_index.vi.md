@@ -8,7 +8,7 @@ pre: " <b> 8. </b> "
 
 # Tài liệu tham khảo
 
-Phụ lục này tổng hợp các liên kết đến các repository mã nguồn và mã hạ tầng dạng mã (Infrastructure as Code - IaC) minh họa cho toàn bộ công việc và sản phẩm kỹ thuật đã thực hiện trong suốt kỳ thực tập.
+Phần tài liệu tham khảo này tổng hợp các liên kết đến các repository mã nguồn và mã hạ tầng dạng mã (Infrastructure as Code - IaC) minh họa cho toàn bộ công việc và sản phẩm kỹ thuật đã thực hiện.
 
 ---
 
